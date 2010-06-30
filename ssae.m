@@ -50,3 +50,10 @@ figure;
 plot(t, x, t, h2);
 figure;
 plot(t, -K*x' + N*r);
+
+%% Full-order observer
+tsobs = 0.2*ts;
+zobs = 0.9;
+wnobs = 4/(zobs*tsobs);
+pobs = [-wnobs*z + wnobs*sqrt(1-zobs^2)*1i, -wnobs*z - wnobs*sqrt(1-zobs^2)*1i];
+L = place(A, C', pobs);

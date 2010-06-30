@@ -1,5 +1,5 @@
 Model {
-  Name			  "ssae_model"
+  Name			  "full_state"
   Version		  7.3
   MdlSubVersion		  0
   GraphicalInterface {
@@ -8,6 +8,7 @@ Model {
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
+      SignalName	      "Y(s)"
       Name		      "Out1"
     }
     Outport {
@@ -27,7 +28,7 @@ Model {
       Name		      "Out4"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.27"
+    ComputedModelVersion    "1.28"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +46,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "alkis"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 30 06:15:49 2010"
+  LastModifiedDate	  "Wed Jun 30 14:46:19 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:27>"
+  ModelVersionFormat	  "1.%<AutoIncrement:28>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -693,7 +694,7 @@ Model {
     }
   }
   System {
-    Name		    "ssae_model"
+    Name		    "full_state"
     Location		    [537, 255, 1419, 819]
     Open		    on
     ModelBrowserVisibility  off
@@ -756,6 +757,12 @@ Model {
       OutScaling	      "2^0"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Y(s)"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Integrator
@@ -926,6 +933,8 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "Y(s)"
+      Labels		      [0, 0]
       SrcBlock		      "C"
       SrcPort		      1
       DstBlock		      "Out1"
@@ -1002,6 +1011,7 @@ Model {
       DstPort		      2
     }
     Line {
+      Labels		      [0, 0]
       SrcBlock		      "Sum1"
       SrcPort		      1
       DstBlock		      "Integrator"
