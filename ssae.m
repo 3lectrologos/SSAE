@@ -1,3 +1,11 @@
+% ---------------------------------------------------------------
+% State-space feedback and observer design for the control of a
+% dual reservoir pumped-storage hydroelectricity plant.
+%
+% Author: Alkis Gotovos
+% ---------------------------------------------------------------
+
+
 %% System parameters
 A1 = 25.12;
 A2 = 56.52;
@@ -8,7 +16,7 @@ R2 = 20;
 % Settling time
 ts = 400;
 
-%% System state-space model
+%% Open loop state-space model
 A = [-(1/(R1*A2) + 1/(R2*A2)) 1/(R1*R2*A2); R2/(R1*A1) -1/(R1*A1)];
 B = [0; 1/A1];
 C = [1 0];
@@ -20,40 +28,29 @@ isStable = isstable(open);
 isControllable = rank(ctrb(open)) == 2;
 isObservable = rank(obsv(open)) == 2;
 
-%% Open loop step response
-tfinal = 10000;
-r = 0.1 * ones([1 tfinal + 1]);
-t = 0:tfinal;
-[y, t, x] = lsim(open, r, t);
-h2 = R2*x(:, 1);
-figure;
-plot(t, x(:, 1));
-
 %% Full-state feedback
-% Polynomial for desired poles.
 z = 0.9;
 wn = 4/(z*ts);
+% Desired pole locations.
 p = [-wn*z + wn*sqrt(1-z^2)*1i, -wn*z - wn*sqrt(1-z^2)*1i];
+% State-feedback gain.
 K = place(A, B, p);
+% Reference signal gain for achieving zero steady-state error.
 N = -1/(C*((A-B*K)\B));
-full = ss(A-B*K, N*B, C, D);
-
-%% Full-state feedback step response.
-tfinal = 1000;
-r = 0.1 * ones([1 tfinal + 1]);
-t = 0:tfinal;
-[y, t, x] = lsim(full, r, t);
-h2 = R2*x(:, 1);
-figure;
-plot(t, x(:, 1));
-figure;
-plot(t, x, t, h2);
-figure;
-plot(t, -K*x' + N*r);
 
 %% Full-order observer
-tsobs = 0.2*ts;
+tsobs = ts/5;
 zobs = 0.9;
 wnobs = 4/(zobs*tsobs);
-pobs = [-wnobs*z + wnobs*sqrt(1-zobs^2)*1i, -wnobs*z - wnobs*sqrt(1-zobs^2)*1i];
-L = place(A, C', pobs);
+% Desired observer pole locations.
+pobs = [-wnobs*zobs + wnobs*sqrt(1-zobs^2)*1i,...
+        -wnobs*zobs - wnobs*sqrt(1-zobs^2)*1i];
+Lfull = place(A, C', pobs);
+
+%% Reduced-order observer
+% Desired observer pole location (just one pole in this case).
+preduced = -5*wnobs*zobs;
+Lreduced = place(A(2, 2), A(1, 2), preduced);
+D = A(2, 2) - Lreduced*A(1, 2);
+F = D*Lreduced + A(2, 1) - Lreduced*A(1, 1);
+G = B(2) - Lreduced*B(1);

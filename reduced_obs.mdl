@@ -1,10 +1,10 @@
 Model {
-  Name			  "full_obs"
+  Name			  "reduced_obs"
   Version		  7.3
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
-    NumRootOutports	    5
+    NumRootOutports	    4
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
@@ -24,16 +24,10 @@ Model {
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      SignalName	      "U(s)"
       Name		      "Out4"
     }
-    Outport {
-      BusObject		      ""
-      BusOutputAsStruct	      "off"
-      Name		      "Out5"
-    }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.22"
+    ComputedModelVersion    "1.53"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -51,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "alkis"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 30 19:33:26 2010"
+  LastModifiedDate	  "Wed Jun 30 19:35:48 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:22>"
+  ModelVersionFormat	  "1.%<AutoIncrement:53>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -554,7 +548,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    " [ 0, 78, 834, 710 ] "
+      ConfigPrmDlgPosition    " [ 0, 39, 834, 671 ] "
     }
     PropName		    "ConfigurationSets"
   }
@@ -632,6 +626,14 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       UseBusObject	      off
@@ -699,8 +701,8 @@ Model {
     }
   }
   System {
-    Name		    "full_obs"
-    Location		    [500, 133, 1421, 781]
+    Name		    "reduced_obs"
+    Location		    [377, 94, 1422, 808]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -717,7 +719,7 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "A"
-      Position		      [475, 235, 505, 265]
+      Position		      [530, 240, 560, 270]
       BlockMirror	      on
       Gain		      "0.001*[-2.6539 0.0885; 79.6178 -3.9809]"
       Multiplication	      "Matrix(K*u)"
@@ -733,24 +735,8 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "A_"
-      Position		      [435, 370, 465, 400]
-      Gain		      "0.001*[-2.6539 0.0885; 79.6178 -3.9809]"
-      Multiplication	      "Matrix(K*u)"
-      ParameterDataTypeMode   "Inherit via internal rule"
-      ParameterDataType	      "fixdt(1, 16)"
-      ParameterScaling	      "2^0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeMode	      "Inherit via internal rule"
-      OutDataType	      "fixdt(1, 16)"
-      OutScaling	      "2^0"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
       Name		      "B"
-      Position		      [355, 175, 385, 205]
+      Position		      [425, 180, 455, 210]
       Gain		      "[0; 0.0398]"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
@@ -766,7 +752,7 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "C"
-      Position		      [585, 175, 615, 205]
+      Position		      [640, 180, 670, 210]
       Gain		      "[1 0]"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
@@ -787,9 +773,42 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "C_"
-      Position		      [435, 430, 465, 460]
-      Gain		      "[1 0]"
+      Name		      "D"
+      Position		      [490, 395, 520, 425]
+      Gain		      "-0.25"
+      Multiplication	      "Matrix(K*u)"
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "F"
+      Position		      [640, 335, 670, 365]
+      BlockMirror	      on
+      Gain		      "-687.8"
+      Multiplication	      "Matrix(K*u)"
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "G"
+      Position		      [425, 275, 455, 305]
+      Gain		      "0.0398"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -805,7 +824,7 @@ Model {
       BlockType		      Integrator
       Name		      "Integrator"
       Ports		      [1, 1]
-      Position		      [475, 175, 505, 205]
+      Position		      [530, 180, 560, 210]
       Port {
 	PortNumber		1
 	Name			"X(s)"
@@ -817,11 +836,11 @@ Model {
       BlockType		      Integrator
       Name		      "Integrator1"
       Ports		      [1, 1]
-      Position		      [435, 300, 465, 330]
+      Position		      [490, 325, 520, 355]
       BlockMirror	      on
       Port {
 	PortNumber		1
-	Name			"X^(s)"
+	Name			"Z(s)"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -829,7 +848,7 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "K"
-      Position		      [295, 300, 325, 330]
+      Position		      [305, 395, 335, 425]
       BlockMirror	      on
       Gain		      "[23.9844 0.3357]"
       Multiplication	      "Matrix(K*u)"
@@ -846,9 +865,9 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "L"
-      Position		      [555, 305, 585, 335]
+      Position		      [490, 455, 520, 485]
       BlockMirror	      on
-      Gain		      "0.001*[93.3652; 34.0529]"
+      Gain		      "2781"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -861,9 +880,20 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [360, 391, 365, 429]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Gain
       Name		      "N"
-      Position		      [185, 175, 215, 205]
+      Position		      [230, 180, 260, 210]
       Gain		      "35.0564"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -877,8 +907,8 @@ Model {
     }
     Block {
       BlockType		      Step
-      Name		      "R(s)1"
-      Position		      [90, 175, 120, 205]
+      Name		      "R(s)"
+      Position		      [140, 180, 170, 210]
       Time		      "0"
       After		      "0.1"
       SampleTime	      "0"
@@ -886,23 +916,7 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "R2, 1"
-      Position		      [585, 85, 615, 115]
-      Gain		      "[20 1]"
-      ParameterDataTypeMode   "Inherit via internal rule"
-      ParameterDataType	      "fixdt(1, 16)"
-      ParameterScaling	      "2^0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeMode	      "Inherit via internal rule"
-      OutDataType	      "fixdt(1, 16)"
-      OutScaling	      "2^0"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "R2, 2"
-      Position		      [285, 370, 315, 400]
-      BlockMirror	      on
+      Position		      [640, 90, 670, 120]
       Gain		      "[20 1]"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -917,23 +931,17 @@ Model {
     Block {
       BlockType		      Saturate
       Name		      "Saturation"
-      Position		      [295, 175, 325, 205]
+      Position		      [335, 180, 365, 210]
       UpperLimit	      "3"
       LowerLimit	      "0"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
-      Port {
-	PortNumber		1
-	Name			"U(s)"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
     }
     Block {
       BlockType		      Sum
       Name		      "Sum"
       Ports		      [2, 1]
-      Position		      [255, 180, 275, 200]
+      Position		      [290, 185, 310, 205]
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
@@ -943,12 +951,18 @@ Model {
       OutScaling	      "2^0"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"U(s)"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Sum
       Name		      "Sum1"
       Ports		      [2, 1]
-      Position		      [415, 180, 435, 200]
+      Position		      [470, 185, 490, 205]
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|++"
@@ -963,7 +977,7 @@ Model {
       BlockType		      Sum
       Name		      "Sum2"
       Ports		      [3, 1]
-      Position		      [515, 305, 535, 325]
+      Position		      [570, 330, 590, 350]
       BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
@@ -979,22 +993,28 @@ Model {
       BlockType		      Sum
       Name		      "Sum3"
       Ports		      [2, 1]
-      Position		      [605, 310, 625, 330]
+      Position		      [395, 330, 415, 350]
       BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
-      Inputs		      "|+-"
+      Inputs		      "|++"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Xu^(s)"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Outport
       Name		      "Out1"
-      Position		      [670, 183, 700, 197]
+      Position		      [725, 188, 755, 202]
       IconDisplay	      "Port number"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
@@ -1002,7 +1022,7 @@ Model {
     Block {
       BlockType		      Outport
       Name		      "Out2"
-      Position		      [205, 113, 235, 127]
+      Position		      [230, 118, 260, 132]
       Port		      "2"
       IconDisplay	      "Port number"
       OutDataType	      "fixdt(1, 16)"
@@ -1011,7 +1031,7 @@ Model {
     Block {
       BlockType		      Outport
       Name		      "Out3"
-      Position		      [670, 93, 700, 107]
+      Position		      [725, 98, 755, 112]
       Port		      "3"
       IconDisplay	      "Port number"
       OutDataType	      "fixdt(1, 16)"
@@ -1020,18 +1040,8 @@ Model {
     Block {
       BlockType		      Outport
       Name		      "Out4"
-      Position		      [355, 113, 385, 127]
+      Position		      [410, 118, 440, 132]
       Port		      "4"
-      IconDisplay	      "Port number"
-      OutDataType	      "fixdt(1, 16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Outport
-      Name		      "Out5"
-      Position		      [230, 378, 260, 392]
-      BlockMirror	      on
-      Port		      "5"
       IconDisplay	      "Port number"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
@@ -1048,15 +1058,29 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "C"
       SrcPort		      1
-      Points		      [29, 0]
+      Points		      [25, 0]
       Branch {
 	DstBlock		"Out1"
 	DstPort			1
       }
       Branch {
-	Points			[0, 130]
-	DstBlock		"Sum3"
-	DstPort			1
+	Points			[0, 155]
+	Branch {
+	  DstBlock		  "F"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 120; 0, 0]
+	  Branch {
+	    DstBlock		    "L"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40; -320, 0]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
       }
     }
     Line {
@@ -1077,35 +1101,6 @@ Model {
       Branch {
 	Points			[0, 60]
 	DstBlock		"A"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Saturation"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "K"
-      SrcPort		      1
-      Points		      [-25, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      Name		      "U(s)"
-      Labels		      [0, 0; 0, 0]
-      SrcBlock		      "Saturation"
-      SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	Points			[0, -70]
-	DstBlock		"Out4"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"B"
 	DstPort			1
       }
     }
@@ -1136,83 +1131,107 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "A_"
+      SrcBlock		      "D"
       SrcPort		      1
       Points		      [55, 0]
       DstBlock		      "Sum2"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "C_"
+      SrcBlock		      "F"
       SrcPort		      1
-      Points		      [145, 0]
-      DstBlock		      "Sum3"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Sum3"
-      SrcPort		      1
-      DstBlock		      "L"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "L"
-      SrcPort		      1
-      Points		      [0, 7]
+      Points		      [1, 2]
       DstBlock		      "Sum2"
       DstPort		      2
     }
     Line {
       SrcBlock		      "B"
       SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	DstBlock		"Sum1"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 95; 151, 0]
-	DstBlock		"Sum2"
-	DstPort			1
-      }
+      DstBlock		      "Sum1"
+      DstPort		      1
     }
     Line {
-      Name		      "X^(s)"
+      SrcBlock		      "G"
+      SrcPort		      1
+      Points		      [141, 0]
+      DstBlock		      "Sum2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Z(s)"
       Labels		      [0, 0]
       SrcBlock		      "Integrator1"
       SrcPort		      1
-      Points		      [-80, 0]
+      Points		      [-35, 0]
       Branch {
-	DstBlock		"K"
+	DstBlock		"Sum3"
 	DstPort			1
       }
       Branch {
 	Points			[0, 70]
-	Branch {
-	  DstBlock		  "A_"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [0, 60]
-	  DstBlock		  "C_"
-	  DstPort		  1
-	}
-	Branch {
-	  DstBlock		  "R2, 2"
-	  DstPort		  1
-	}
+	DstBlock		"D"
+	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "R2, 2"
+      SrcBlock		      "L"
       SrcPort		      1
-      DstBlock		      "Out5"
+      Points		      [-80, 0]
+      DstBlock		      "Sum3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "K"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "K"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "R(s)1"
+      Name		      "U(s)"
+      Labels		      [0, 0]
+      SrcBlock		      "Sum"
       SrcPort		      1
-      Points		      [30, 0]
+      DstBlock		      "Saturation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, -70]
+	DstBlock		"Out4"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"B"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 95]
+	DstBlock		"G"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Xu^(s)"
+      Labels		      [0, 0; 0, 0]
+      SrcBlock		      "Sum3"
+      SrcPort		      1
+      Points		      [0, 80]
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "R(s)"
+      SrcPort		      1
+      Points		      [35, 0]
       Branch {
 	DstBlock		"N"
 	DstPort			1

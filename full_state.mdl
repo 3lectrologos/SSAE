@@ -28,7 +28,7 @@ Model {
       Name		      "Out4"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.28"
+    ComputedModelVersion    "1.37"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -46,9 +46,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "alkis"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 30 14:46:19 2010"
+  LastModifiedDate	  "Wed Jun 30 19:30:05 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:28>"
+  ModelVersionFormat	  "1.%<AutoIncrement:37>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -130,7 +130,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.6.0"
 	  StartTime		  "0.0"
-	  StopTime		  "2000.0"
+	  StopTime		  "1500.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "1"
 	  InitialStep		  "auto"
@@ -548,8 +548,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition    " [ 241, 192, 1075, 824 ] "
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 302, 70, 1146, 862 ] "
     }
     PropName		    "ConfigurationSets"
   }
@@ -811,7 +811,7 @@ Model {
     Block {
       BlockType		      Step
       Name		      "R(s)"
-      Position		      [60, 150, 90, 180]
+      Position		      [45, 150, 75, 180]
       Time		      "0"
       After		      "0.1"
       SampleTime	      "0"
@@ -912,20 +912,6 @@ Model {
       OutScaling	      "2^0"
     }
     Line {
-      SrcBlock		      "R(s)"
-      SrcPort		      1
-      Points		      [15, 0]
-      Branch {
-	DstBlock		"N"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -70]
-	DstBlock		"Out2"
-	DstPort			1
-      }
-    }
-    Line {
       Labels		      [0, 0]
       SrcBlock		      "N"
       SrcPort		      1
@@ -1022,6 +1008,20 @@ Model {
       SrcPort		      1
       DstBlock		      "Out3"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "R(s)"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"N"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -70]
+	DstBlock		"Out2"
+	DstPort			1
+      }
     }
   }
 }
