@@ -1,0 +1,88 @@
+\documentclass[a4paper, 11pt, english, greek]{article}
+
+\usepackage{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[T1]{fontenc}
+%%\usepackage{lmodern}
+\renewcommand{\ttdefault}{pcr}
+
+\usepackage{subfig}
+\usepackage[pdftex]{graphicx}
+%%\usepackage{cite}
+\usepackage{latexsym}
+\usepackage{amsmath}
+
+\title{Σχεδίαση Συστημάτων Αυτομάτου Ελέγχου \\ \vspace{12pt}
+Εργαστηριακή άσκηση \textlatin{Matlab/Simulink}}
+\author{Άλκης Γκότοβος}
+
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+
+\begin{document}
+
+\begin{titlepage}
+	\maketitle
+	\thispagestyle{empty}
+\end{titlepage}
+
+\section{Στόχος}
+Στόχος της άσκησης είναι η σχεδίαση τριών διαφορετικών ελεγκτών για τον έλεγχο ενός συστήματος διασυνδεδεμένων
+δεξαμενών που χρησιμοποιείται σε υδροηλεκτρικό εργοστάσιο, έτσι ώστε να πληρούνται δεδομένες προδιαγραφές.
+
+Αρχικά θα σχεδιασθεί ένας \emph{ελεγκτής ανάδρασης κατάστασης},
+στη συνέχεια ένας \emph{παρατηρητής πλήρους τάξης} και
+τέλος ένας \emph{παρατηρητής μειωμένης τάξης}.
+
+\section{Σύστημα ανοιχτού βρόχου}
+Σύμφωνα με την εκφώνηση το σύστημα των δεξαμενών διέπεται από τις παρακάτω διαφορικές εξισώσεις:
+\begin{equation}
+  \begin{split}
+  	\label{eq:dif}
+	q_i(t)-q(t) &= A_1 \dot{h}_1(t)\\
+	q(t)-q_0(t) &= A_2 \dot{h}_2(t)\\
+	h_1(t) - h_2(t) &= q(t) R_1\\
+	h_2(t) &= q_0(t) R_2
+  \end{split}
+\end{equation}
+Χρησιμοποιώντας ως μεταβλητές κατάστασης τις $x_1(t)=q_0(t)$ και $x_2(t)=h_1(t)$ και είσοδο $u(t) = q_i(t)$,
+μπορούμε να εξάγουμε τις εξισώσεις που περιγράφουν το σύστημα στο χώρο κατάστασης:
+\begin{equation}
+  \begin{split}
+  	\label{eq:ss}
+  	\dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u}\\
+    y &= \mathbf{C}\mathbf{x}
+  \end{split}
+\end{equation}
+όπου
+\begin{equation}
+  \label{eq:mat}
+  \begin{split}
+    \mathbf{A} &=
+  	\begin{bmatrix}
+      -(\frac{\displaystyle 1}{\displaystyle R_1 A_2} + \frac{\displaystyle 1}{\displaystyle R_2 A_2}) &
+      \frac{\displaystyle 1}{\displaystyle R_1 R_2 A_2} \\
+      \frac{\displaystyle R_2}{\displaystyle R_1 A_1} &
+      -\frac{\displaystyle 1}{\displaystyle R_1 A_1}
+    \end{bmatrix}\\
+    \mathbf{B} &=
+    \begin{bmatrix}
+      0\\
+      \frac{\displaystyle 1}{\displaystyle A_1}
+    \end{bmatrix}\\
+    \mathbf{C} &=
+    \begin{bmatrix}
+      1 & 0
+    \end{bmatrix}
+  \end{split}
+\end{equation}
+
+%%\begin{figure}[htb]
+%%  \centering
+%% \includegraphics[width=300px]{test1}
+%%  \caption{}
+%%\end{figure}
+
+\end{document}
