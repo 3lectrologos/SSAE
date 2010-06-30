@@ -22,27 +22,31 @@ isObservable = rank(obsv(open)) == 2;
 
 %% Open loop step response
 tfinal = 10000;
-u = 0.1 * ones([1 tfinal + 1]);
+r = 0.1 * ones([1 tfinal + 1]);
 t = 0:tfinal;
-[y, t, x] = lsim(open, u, t);
+[y, t, x] = lsim(open, r, t);
 h2 = R2*x(:, 1);
 figure;
-plot(t, x, t, h2);
+plot(t, x(:, 1));
 
 %% Full-state feedback
 % Polynomial for desired poles.
-z = 0.6;
+z = 0.9;
 wn = 4/(z*ts);
 p = [-wn*z + wn*sqrt(1-z^2)*1i, -wn*z - wn*sqrt(1-z^2)*1i];
-K = acker(A, B, p);
-full = ss(A-B*K, B, C, D);
+K = place(A, B, p);
+N = -1/(C*((A-B*K)\B));
+full = ss(A-B*K, N*B, C, D);
 
 %% Full-state feedback step response.
-tfinal = 10000;
-N = 10;
-u = N * 0.1 * ones([1 tfinal + 1]);
+tfinal = 1000;
+r = 0.1 * ones([1 tfinal + 1]);
 t = 0:tfinal;
-[y, t, x] = lsim(full, u, t);
+[y, t, x] = lsim(full, r, t);
 h2 = R2*x(:, 1);
 figure;
+plot(t, x(:, 1));
+figure;
 plot(t, x, t, h2);
+figure;
+plot(t, -K*x' + N*r);
