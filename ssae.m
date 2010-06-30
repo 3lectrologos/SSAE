@@ -1,9 +1,12 @@
-% ---------------------------------------------------------------
-% State-space feedback and observer design for the control of a
-% dual reservoir pumped-storage hydroelectricity plant.
-%
-% Author: Alkis Gotovos
-% ---------------------------------------------------------------
+%%% ----------------------------------------------------------------------
+%%%
+%%% Description: State-space feedback and observer design for the
+%%% control of a dual-reservoir pumped-storage hydroelectricity plant.
+%%%
+%%% Author: Alkis Gotovos
+%%% Created: 29 Jun 2010
+%%%
+%%% ----------------------------------------------------------------------
 
 
 %% System parameters
@@ -20,8 +23,7 @@ ts = 400;
 A = [-(1/(R1*A2) + 1/(R2*A2)) 1/(R1*R2*A2); R2/(R1*A1) -1/(R1*A1)];
 B = [0; 1/A1];
 C = [1 0];
-D = 0;
-open = ss(A, B, C, D);
+% D = 0;
 
 %% Check (open loop) stability - controllability - observability
 isStable = isstable(open);
