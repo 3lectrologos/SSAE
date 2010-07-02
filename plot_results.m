@@ -37,6 +37,7 @@ text(to, yout(to, 1), s,...
  %% Plot reservoir heights
  center = floor(length(tout)/2);
  heights_handle = figure;
+ hold on;
  plot(tout, yout(:, 3), '-b', tout, yout(:, 4), '-b',...
       'LineWidth', 1, 'Color', [0.4 0.4 0.4]);
  ylim([0 7]);
@@ -48,6 +49,7 @@ text(to, yout(to, 1), s,...
   
  %% Plot input flow
  input_handle = figure;
+ hold on;
  plot(tout, yout(:, 5),...
       'LineWidth', 1, 'Color', [0.4 0.4 0.4]);
  ylim([0 3.5]);

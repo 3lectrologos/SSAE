@@ -23,7 +23,8 @@ ts = 400;
 A = [-(1/(R1*A2) + 1/(R2*A2)) 1/(R1*R2*A2); R2/(R1*A1) -1/(R1*A1)];
 B = [0; 1/A1];
 C = [1 0];
-% D = 0;
+D = 0;
+open = ss(A, B, C, D);
 
 %% Check (open loop) stability - controllability - observability
 isStable = isstable(open);
@@ -51,7 +52,7 @@ Lfull = place(A, C', pobs);
 
 %% Reduced-order observer
 % Desired observer pole location (just one pole in this case).
-preduced = -5*wnobs*zobs;
+preduced = -2*wnobs*zobs;
 Lreduced = place(A(2, 2), A(1, 2), preduced);
 D = A(2, 2) - Lreduced*A(1, 2);
 F = D*Lreduced + A(2, 1) - Lreduced*A(1, 1);

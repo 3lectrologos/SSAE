@@ -27,7 +27,7 @@ Model {
       Name		      "Out4"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.53"
+    ComputedModelVersion    "1.55"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "alkis"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 30 19:35:48 2010"
+  LastModifiedDate	  "Fri Jul  2 02:46:43 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:53>"
+  ModelVersionFormat	  "1.%<AutoIncrement:55>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -775,7 +775,7 @@ Model {
       BlockType		      Gain
       Name		      "D"
       Position		      [490, 395, 520, 425]
-      Gain		      "-0.25"
+      Gain		      "-0.1"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -792,7 +792,7 @@ Model {
       Name		      "F"
       Position		      [640, 335, 670, 365]
       BlockMirror	      on
-      Gain		      "-687.8"
+      Gain		      "-105.58"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -867,7 +867,7 @@ Model {
       Name		      "L"
       Position		      [490, 455, 520, 485]
       BlockMirror	      on
-      Gain		      "2781"
+      Gain		      "1085.4"
       Multiplication	      "Matrix(K*u)"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"

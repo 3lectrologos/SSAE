@@ -1,0 +1,415 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>reduced_obs</title><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d26e1"></a>reduced_obs</h1></div><div><h2 class="subtitle">Details for reduced_obs</h2></div><div><div class="mediaobject"><map name="d26e15"><area coords="365,155,391,181" shape="rect" href="#bac13b6c7c29d8b0d801244ec0b68fec"><area coords="273,102,299,128" shape="rect" href="#23de932639b340901c4d67b957715b4f"><area coords="461,102,487,128" shape="rect" href="#77b523e56aa9f050c02fbb568ce2dcac"><area coords="330,290,356,317" shape="rect" href="#a481e43d4b214ae6fd57ad4959754073"><area coords="461,238,487,264" shape="rect" href="#9ac02a00a0978ad09c64e21bf9fd0ef1"><area coords="273,185,299,212" shape="rect" href="#35c38f535e646e021b598e49286afffc"><area coords="365,102,391,128" shape="rect" href="#26f8fac92350a0fdb17e8d04cfd5a509"><area coords="330,229,356,255" shape="rect" href="#64bbe5796bbb4076f563ecf488ffb12f"><area coords="168,290,194,317" shape="rect" href="#10e104b59551ee06de0999f501ccbb69"><area coords="330,343,356,369" shape="rect" href="#cd328869cb41dcd13c1a35d6e26f6d39"><area coords="216,287,220,320" shape="rect" href="#5403b9ea147f7ad699d75b02189df90b"><area coords="102,102,128,128" shape="rect" href="#ac36320c9a623cc05ec44edde0ad3797"><area coords="23,102,50,128" shape="rect" href="#11d3fd0c81669b86c1d57ead3b3ef66f"><area coords="461,23,487,50" shape="rect" href="#e7f733bfa34e188a38fc409397fdf3f1"><area coords="194,102,220,128" shape="rect" href="#b3118bf6a1a839a000dfcd951ed388ae"><area coords="155,107,172,124" shape="rect" href="#7b6b1c1ef5265c0210f0ee054aeb06a7"><area coords="312,107,330,124" shape="rect" href="#f52542db5ad1d15385f7075e64018640"><area coords="400,233,417,251" shape="rect" href="#c0f6e377c8dc060134c8b6272b9550d6"><area coords="247,233,264,251" shape="rect" href="#053e2ff9db3b7c822cfe6d40cfb32ecb"><area coords="535,109,562,121" shape="rect" href="#dd88bcf084e06e92ba0a0d504b1d58c0"><area coords="102,48,128,60" shape="rect" href="#77c0babecf0a837607f5ccadd7b6e38d"><area coords="535,30,562,43" shape="rect" href="#4cb84cd1d41b1d2711a6045b7890c5dd"><area coords="260,48,286,60" shape="rect" href="#977ffc8d799bec4da8492ff160c17fe2"></map><img src="./reduced_obs_html_files/image-001-sl.png" usemap="%0A                #d26e15" ismap="" border="0"></div></div><div><div class="author"><h3 class="author"><span class="firstname">alkis
+ </span></h3></div></div><div><p class="pubdate">02-Jul-2010 03:02:43</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d26e67">Model - reduced_obs</a></span></dt><dt><span class="chapter"><a href="#d26e209">System - reduced_obs</a></span></dt><dt><span class="chapter"><a href="#d26e1264">Appendix</a></span></dt></dl></div><div class="list-of-tables"><p><b>List of Tables</b></p><dl><dt>1. <a href="#d26e142">Sample Times</a></dt><dt>2. <a href="#d26e266">Gain Block Properties</a></dt><dt>3. <a href="#d26e619">Integrator Block Properties</a></dt><dt>4. <a href="#d26e684">Mux Block Properties</a></dt><dt>5. <a href="#d26e716">Outport Block Properties</a></dt><dt>6. <a href="#d26e961">Saturate Block Properties</a></dt><dt>7. <a href="#d26e1028">Step Block Properties</a></dt><dt>8. <a href="#d26e1081">Sum Block Properties</a></dt><dt>9. <a href="#d26e1269">Block Type Count</a></dt></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d26e67"></a>Model - reduced_obs</h2></div></div></div><a name="77e400506e4864544267f00640e1d07d"></a><div class="orderedlist"><p class="title"><b>Full Model Hierarchy</b></p><ol type="1" compact><li>
+            <a href="#77e400506e4864544267f00640e1d07d">reduced_obs</a>
+        </li></ol></div><a name="d26e81"></a><div class="table"><div class="table-contents"><table summary="" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="9000*"><col colname="1" colnum="1" width="30000*"><thead><tr>
+            <th align="left">Simulation Parameter</th>
+            <th align="left">Value</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Solver</td>
+            <td align="left">ode3</td>
+        </tr><tr>
+            <td align="left">RelTol</td>
+            <td align="left">1e-3</td>
+        </tr><tr>
+            <td align="left">Refine</td>
+            <td align="left">1</td>
+        </tr><tr>
+            <td align="left">MaxOrder</td>
+            <td align="left">5</td>
+        </tr><tr>
+            <td align="left">FixedStep</td>
+            <td align="left">1</td>
+        </tr><tr>
+            <td align="left">ZeroCross</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div><a name="d26e142"></a><div class="table"><p class="title"><b>Table&nbsp;1.&nbsp;Sample Times</b></p><div class="table-contents"><table summary="Sample Times" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="120*"><col colname="2" colnum="2" width="180*"><col colname="3" colnum="3" width="180*"><thead><tr>
+            <th align="left">Color</th>
+            <th align="left">Annotation</th>
+            <th align="left">Description</th>
+            <th align="left">Value</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <span class="inlinemediaobject"><img src="./reduced_obs_html_files/image-004-sampletime.bmp"></span>
+            </td>
+            <td align="left">Cont</td>
+            <td align="left">Continuous</td>
+            <td align="left">0</td>
+        </tr><tr>
+            <td align="left">
+                <span class="inlinemediaobject"><img src="./reduced_obs_html_files/image-005-sampletime.bmp"></span>
+            </td>
+            <td align="left">D1</td>
+            <td align="left">Discrete 1</td>
+            <td align="left">1</td>
+        </tr></tbody></table></div></div><p>
+    <a href="#appendix-sl">
+        <span class="emphasis"><em>[more info]</em></span>
+    </a>
+</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d26e209"></a>System - reduced_obs</h2></div></div></div><a name="03a99724766af7c65ec3ee8e04bfab83"></a><div class="mediaobject"><map name="d26e216"><area coords="365,155,391,181" shape="rect" href="#bac13b6c7c29d8b0d801244ec0b68fec"><area coords="273,102,299,128" shape="rect" href="#23de932639b340901c4d67b957715b4f"><area coords="461,102,487,128" shape="rect" href="#77b523e56aa9f050c02fbb568ce2dcac"><area coords="330,290,356,317" shape="rect" href="#a481e43d4b214ae6fd57ad4959754073"><area coords="461,238,487,264" shape="rect" href="#9ac02a00a0978ad09c64e21bf9fd0ef1"><area coords="273,185,299,212" shape="rect" href="#35c38f535e646e021b598e49286afffc"><area coords="365,102,391,128" shape="rect" href="#26f8fac92350a0fdb17e8d04cfd5a509"><area coords="330,229,356,255" shape="rect" href="#64bbe5796bbb4076f563ecf488ffb12f"><area coords="168,290,194,317" shape="rect" href="#10e104b59551ee06de0999f501ccbb69"><area coords="330,343,356,369" shape="rect" href="#cd328869cb41dcd13c1a35d6e26f6d39"><area coords="216,287,220,320" shape="rect" href="#5403b9ea147f7ad699d75b02189df90b"><area coords="102,102,128,128" shape="rect" href="#ac36320c9a623cc05ec44edde0ad3797"><area coords="23,102,50,128" shape="rect" href="#11d3fd0c81669b86c1d57ead3b3ef66f"><area coords="461,23,487,50" shape="rect" href="#e7f733bfa34e188a38fc409397fdf3f1"><area coords="194,102,220,128" shape="rect" href="#b3118bf6a1a839a000dfcd951ed388ae"><area coords="155,107,172,124" shape="rect" href="#7b6b1c1ef5265c0210f0ee054aeb06a7"><area coords="312,107,330,124" shape="rect" href="#f52542db5ad1d15385f7075e64018640"><area coords="400,233,417,251" shape="rect" href="#c0f6e377c8dc060134c8b6272b9550d6"><area coords="247,233,264,251" shape="rect" href="#053e2ff9db3b7c822cfe6d40cfb32ecb"><area coords="535,109,562,121" shape="rect" href="#dd88bcf084e06e92ba0a0d504b1d58c0"><area coords="102,48,128,60" shape="rect" href="#77c0babecf0a837607f5ccadd7b6e38d"><area coords="535,30,562,43" shape="rect" href="#4cb84cd1d41b1d2711a6045b7890c5dd"><area coords="260,48,286,60" shape="rect" href="#977ffc8d799bec4da8492ff160c17fe2"></map><img src="./reduced_obs_html_files/image-008-sl.png" usemap="%0A                #d26e216" ismap="" border="0"></div><a name="d26e266"></a><div class="table"><p class="title"><b>Table&nbsp;2.&nbsp;Gain Block Properties</b></p><div class="table-contents"><table summary="Gain Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><col colname="5" colnum="5" width="60*"><col colname="6" colnum="6" width="60*"><col colname="7" colnum="7" width="60*"><col colname="8" colnum="8" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Gain</th>
+            <th align="left">Multiplication</th>
+            <th align="left">Param Min</th>
+            <th align="left">Param Max</th>
+            <th align="left">Param Data Type Str</th>
+            <th align="left">Out Min</th>
+            <th align="left">Out Max</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="bac13b6c7c29d8b0d801244ec0b68fec"></a>A</td>
+            <td align="left">0.001*[-2.6539 0.0885; 79.6178 -3.9809]</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="23de932639b340901c4d67b957715b4f"></a>B</td>
+            <td align="left">[0; 0.0398]</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="77b523e56aa9f050c02fbb568ce2dcac"></a>C</td>
+            <td align="left">[1 0]</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="a481e43d4b214ae6fd57ad4959754073"></a>D</td>
+            <td align="left">-0.1</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="9ac02a00a0978ad09c64e21bf9fd0ef1"></a>F</td>
+            <td align="left">-105.58</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="35c38f535e646e021b598e49286afffc"></a>G</td>
+            <td align="left">0.0398</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="10e104b59551ee06de0999f501ccbb69"></a>K</td>
+            <td align="left">[23.9844 0.3357]</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="cd328869cb41dcd13c1a35d6e26f6d39"></a>L</td>
+            <td align="left">1085.4</td>
+            <td align="left">Matrix(K*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="ac36320c9a623cc05ec44edde0ad3797"></a>N</td>
+            <td align="left">35.0564</td>
+            <td align="left">Element-wise(K.*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="e7f733bfa34e188a38fc409397fdf3f1"></a>R2, 1</td>
+            <td align="left">[20 1]</td>
+            <td align="left">Element-wise(K.*u)</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr></tbody></table></div></div><a name="d26e619"></a><div class="table"><p class="title"><b>Table&nbsp;3.&nbsp;Integrator Block Properties</b></p><div class="table-contents"><table summary="Integrator Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">External Reset</th>
+            <th align="left">Initial Condition Source</th>
+            <th align="left">Zero Cross</th>
+            <th align="left">Continuous State Attributes</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="26f8fac92350a0fdb17e8d04cfd5a509"></a>Integrator</td>
+            <td align="left">none</td>
+            <td align="left">internal</td>
+            <td align="left">on</td>
+            <td align="left">''</td>
+        </tr><tr>
+            <td align="left">
+                <a name="64bbe5796bbb4076f563ecf488ffb12f"></a>Integrator1</td>
+            <td align="left">none</td>
+            <td align="left">internal</td>
+            <td align="left">on</td>
+            <td align="left">''</td>
+        </tr></tbody></table></div></div><a name="d26e684"></a><div class="table"><p class="title"><b>Table&nbsp;4.&nbsp;Mux Block Properties</b></p><div class="table-contents"><table summary="Mux Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Inputs</th>
+            <th align="left">Display Option</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="5403b9ea147f7ad699d75b02189df90b"></a>Mux</td>
+            <td align="left">2</td>
+            <td align="left">bar</td>
+        </tr></tbody></table></div></div><a name="d26e716"></a><div class="table"><p class="title"><b>Table&nbsp;5.&nbsp;Outport Block Properties</b></p><div class="table-contents"><table summary="Outport Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><col colname="5" colnum="5" width="60*"><col colname="6" colnum="6" width="60*"><col colname="7" colnum="7" width="60*"><col colname="8" colnum="8" width="60*"><col colname="9" colnum="9" width="60*"><col colname="10" colnum="10" width="60*"><col colname="11" colnum="11" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Port</th>
+            <th align="left">Icon Display</th>
+            <th align="left">Bus Object</th>
+            <th align="left">Out Min</th>
+            <th align="left">Out Max</th>
+            <th align="left">Out Data Type Str</th>
+            <th align="left">Source Of Initial Output Value</th>
+            <th align="left">Output When Disabled</th>
+            <th align="left">Initial Output</th>
+            <th align="left">Dimensions Mode</th>
+            <th align="left">Used By Blk</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="dd88bcf084e06e92ba0a0d504b1d58c0"></a>Out1</td>
+            <td align="left">1</td>
+            <td align="left">Port number</td>
+            <td align="left">BusObject</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">[]</td>
+            <td align="left">auto</td>
+            <td align="left">
+                <a href="#10e104b59551ee06de0999f501ccbb69">K</a>, <a href="#77e400506e4864544267f00640e1d07d">reduced_obs (model)</a>, <a href="#9ac02a00a0978ad09c64e21bf9fd0ef1">F</a>, <a href="#cd328869cb41dcd13c1a35d6e26f6d39">L</a>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="77c0babecf0a837607f5ccadd7b6e38d"></a>Out2</td>
+            <td align="left">2</td>
+            <td align="left">Port number</td>
+            <td align="left">BusObject</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">[]</td>
+            <td align="left">auto</td>
+            <td align="left">
+                <a href="#ac36320c9a623cc05ec44edde0ad3797">N</a>, <a href="#77e400506e4864544267f00640e1d07d">reduced_obs (model)</a>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="4cb84cd1d41b1d2711a6045b7890c5dd"></a>Out3</td>
+            <td align="left">3</td>
+            <td align="left">Port number</td>
+            <td align="left">BusObject</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">[]</td>
+            <td align="left">auto</td>
+            <td align="left">
+                <a href="#77e400506e4864544267f00640e1d07d">reduced_obs (model)</a>
+            </td>
+        </tr><tr>
+            <td align="left">
+                <a name="977ffc8d799bec4da8492ff160c17fe2"></a>Out4</td>
+            <td align="left">4</td>
+            <td align="left">Port number</td>
+            <td align="left">BusObject</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: auto</td>
+            <td align="left">Dialog</td>
+            <td align="left">held</td>
+            <td align="left">[]</td>
+            <td align="left">auto</td>
+            <td align="left">
+                <a href="#77e400506e4864544267f00640e1d07d">reduced_obs (model)</a>, <a href="#23de932639b340901c4d67b957715b4f">B</a>, <a href="#35c38f535e646e021b598e49286afffc">G</a>
+            </td>
+        </tr></tbody></table></div></div><a name="d26e961"></a><div class="table"><p class="title"><b>Table&nbsp;6.&nbsp;Saturate Block Properties</b></p><div class="table-contents"><table summary="Saturate Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><col colname="5" colnum="5" width="60*"><col colname="6" colnum="6" width="60*"><col colname="7" colnum="7" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Upper Limit</th>
+            <th align="left">Lower Limit</th>
+            <th align="left">Linearize As Gain</th>
+            <th align="left">Zero Cross</th>
+            <th align="left">Out Min</th>
+            <th align="left">Out Max</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="b3118bf6a1a839a000dfcd951ed388ae"></a>Saturation</td>
+            <td align="left">3</td>
+            <td align="left">0</td>
+            <td align="left">on</td>
+            <td align="left">on</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Same as input</td>
+        </tr></tbody></table></div></div><a name="d26e1028"></a><div class="table"><p class="title"><b>Table&nbsp;7.&nbsp;Step Block Properties</b></p><div class="table-contents"><table summary="Step Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><col colname="5" colnum="5" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Time</th>
+            <th align="left">Before</th>
+            <th align="left">After</th>
+            <th align="left">Sample Time</th>
+            <th align="left">Zero Cross</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="11d3fd0c81669b86c1d57ead3b3ef66f"></a>R(s)</td>
+            <td align="left">0</td>
+            <td align="left">0</td>
+            <td align="left">0.1</td>
+            <td align="left">0</td>
+            <td align="left">on</td>
+        </tr></tbody></table></div></div><a name="d26e1081"></a><div class="table"><p class="title"><b>Table&nbsp;8.&nbsp;Sum Block Properties</b></p><div class="table-contents"><table summary="Sum Block Properties" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="60*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="60*"><col colname="3" colnum="3" width="60*"><col colname="4" colnum="4" width="60*"><col colname="5" colnum="5" width="60*"><col colname="6" colnum="6" width="60*"><col colname="7" colnum="7" width="60*"><col colname="8" colnum="8" width="60*"><col colname="9" colnum="9" width="60*"><thead><tr>
+            <th align="left">Name</th>
+            <th align="left">Icon Shape</th>
+            <th align="left">Inputs</th>
+            <th align="left">Collapse Mode</th>
+            <th align="left">Collapse Dim</th>
+            <th align="left">Input Same DT</th>
+            <th align="left">Accum Data Type Str</th>
+            <th align="left">Out Min</th>
+            <th align="left">Out Max</th>
+            <th align="left">Out Data Type Str</th>
+        </tr></thead><tbody><tr>
+            <td align="left">
+                <a name="7b6b1c1ef5265c0210f0ee054aeb06a7"></a>Sum</td>
+            <td align="left">round</td>
+            <td align="left">|+-</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="f52542db5ad1d15385f7075e64018640"></a>Sum1</td>
+            <td align="left">round</td>
+            <td align="left">|++</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="c0f6e377c8dc060134c8b6272b9550d6"></a>Sum2</td>
+            <td align="left">round</td>
+            <td align="left">|+++</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr><tr>
+            <td align="left">
+                <a name="053e2ff9db3b7c822cfe6d40cfb32ecb"></a>Sum3</td>
+            <td align="left">round</td>
+            <td align="left">|++</td>
+            <td align="left">All dimensions</td>
+            <td align="left">1</td>
+            <td align="left">off</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+            <td align="left">[]</td>
+            <td align="left">[]</td>
+            <td align="left">Inherit: Inherit via internal rule</td>
+        </tr></tbody></table></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d26e1264"></a>Appendix</h2></div></div></div><a name="appendix-sl"></a><a name="d26e1269"></a><div class="table"><p class="title"><b>Table&nbsp;9.&nbsp;Block Type Count</b></p><div class="table-contents"><table summary="Block Type Count" border="1" cellspacing="0" fastRender="1" width="100%"><col colname="0" colnum="0" width="120*"><col colname="1" colnum="1" width="60*"><col colname="2" colnum="2" width="240*"><thead><tr>
+            <th align="left">BlockType</th>
+            <th align="left">Count</th>
+            <th align="left">Block Names</th>
+        </tr></thead><tbody><tr>
+            <td align="left">Gain</td>
+            <td align="left">10</td>
+            <td align="left">
+                <a href="#bac13b6c7c29d8b0d801244ec0b68fec">A</a>, <a href="#23de932639b340901c4d67b957715b4f">B</a>, <a href="#77b523e56aa9f050c02fbb568ce2dcac">C</a>, <a href="#a481e43d4b214ae6fd57ad4959754073">D</a>, <a href="#9ac02a00a0978ad09c64e21bf9fd0ef1">F</a>, <a href="#35c38f535e646e021b598e49286afffc">G</a>, <a href="#10e104b59551ee06de0999f501ccbb69">K</a>, <a href="#cd328869cb41dcd13c1a35d6e26f6d39">L</a>, <a href="#ac36320c9a623cc05ec44edde0ad3797">N</a>, <a href="#e7f733bfa34e188a38fc409397fdf3f1">R2, 1</a>
+            </td>
+        </tr><tr>
+            <td align="left">Sum</td>
+            <td align="left">4</td>
+            <td align="left">
+                <a href="#7b6b1c1ef5265c0210f0ee054aeb06a7">Sum</a>, <a href="#f52542db5ad1d15385f7075e64018640">Sum1</a>, <a href="#c0f6e377c8dc060134c8b6272b9550d6">Sum2</a>, <a href="#053e2ff9db3b7c822cfe6d40cfb32ecb">Sum3</a>
+            </td>
+        </tr><tr>
+            <td align="left">Outport</td>
+            <td align="left">4</td>
+            <td align="left">
+                <a href="#dd88bcf084e06e92ba0a0d504b1d58c0">Out1</a>, <a href="#77c0babecf0a837607f5ccadd7b6e38d">Out2</a>, <a href="#4cb84cd1d41b1d2711a6045b7890c5dd">Out3</a>, <a href="#977ffc8d799bec4da8492ff160c17fe2">Out4</a>
+            </td>
+        </tr><tr>
+            <td align="left">Integrator</td>
+            <td align="left">2</td>
+            <td align="left">
+                <a href="#26f8fac92350a0fdb17e8d04cfd5a509">Integrator</a>, <a href="#64bbe5796bbb4076f563ecf488ffb12f">Integrator1</a>
+            </td>
+        </tr><tr>
+            <td align="left">Step</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a href="#11d3fd0c81669b86c1d57ead3b3ef66f">R(s)</a>
+            </td>
+        </tr><tr>
+            <td align="left">Saturate</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a href="#b3118bf6a1a839a000dfcd951ed388ae">Saturation</a>
+            </td>
+        </tr><tr>
+            <td align="left">Mux</td>
+            <td align="left">1</td>
+            <td align="left">
+                <a href="#5403b9ea147f7ad699d75b02189df90b">Mux</a>
+            </td>
+        </tr></tbody></table></div></div><a name="appendix-sf"></a></div></div></body></html>
